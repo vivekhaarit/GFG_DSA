@@ -2,8 +2,9 @@
 import java.util.Scanner;
 
 public class Demo {
-    private static final Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Solution obj = new Solution();
         System.out.print("Enter any number: ");
         int n = scanner.nextInt();
