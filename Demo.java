@@ -8,23 +8,24 @@ public class Demo {
         System.out.print("Enter any number: ");
         int n = scanner.nextInt();
 
-        int result = obj.digitsInFactorial(n);
-        System.out.println("Digits in factorial : "+result);
+        boolean result = obj.isPrime(n);
+        System.out.println("The number is : "+result);
     }
 
 }
 
-class Solution{
-    public int digitsInFactorial(int N){
-        int  factorial =1;
-        for(int i=1;i<=N;i++){
-            factorial *= i;
+class Solution {
+    public boolean isPrime(int N) {
+        if(N == 2 || N ==3 || N==5 || N==7 || N== 11 || N== 13) return true;
+        else{
+            int n = (int)Math.floor(Math.sqrt(N));
+            int i=2;
+            for (;i<=n;i++){
+                if(N%i==0){
+                    return false;
+                }
+            }
         }
-        int count =1;
-        while(factorial != 0){
-            factorial = factorial % 10;
-            count++;
-        }
-        return count;
+        return true;
     }
 }
